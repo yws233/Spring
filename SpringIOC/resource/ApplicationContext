@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--声明对象实例，id指定标识符-->
+    <bean id="springDemo" class="cn.spring.demo.SpringDemo">
+        <!--指定被赋值的属性名，与setWho对应！-->
+        <property name="who">
+            <!--赋值的内容-->
+            <value>this is Spring demo!</value>
+        </property>
+    </bean>
+</beans>
