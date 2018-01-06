@@ -15,7 +15,7 @@ Spring IOC and AOP 练习
 
 ### A.各类增强处理
 
-![]()
+![](https://github.com/yws233/Spring/blob/master/aop.png)
 
 ### B.注解增强处理
 
