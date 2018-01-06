@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
+    <bean id="testEntity" class="cn.spring.pojo.TestEntity">
+        <!--使用CDATA处理特殊字符-->
+        <property name="specialCharacter1">
+            <value><![CDATA[P&G]]></value>
+        </property>
+        <!--特殊字符转化为实体引用-->
+        <property name="specialCharacter2">
+            <value>P&amp;G2</value>
+        </property>
+        <!--bean注入-->
+        <property name="innerBean">
+            <bean class="cn.spring.pojo.User">
+                <property name="username">
+                    <value>测试bean！</value>
+                </property>
+            </bean>
+        </property>
+        <!--集合注入方式-->
+        <property name="list">
+            <list>
+                <value>list1</value>
+                <value>list2</value>
+                <value>list3</value>
+            </list>
+        </property>
+        <!--数组注入-->
+        <property name="array">
+            <list>
+                <value>array1</value>
+                <value>array2</value>
+                <value>array3</value>
+            </list>
+        </property>
+        <!--注入set-->
+        <property name="set">
+            <set>
+                <value>set1</value>
+                <value>set2</value>
+                <value>set3</value>
+            </set>
+        </property>
+        <!--注入map-->
+        <property name="map">
+            <map>
+                <entry>
+                    <key><value>1</value></key><!--指定键-->
+                    <value>map1</value><!--指定值-->
+                </entry>
+                <entry>
+                    <key><value>2</value></key><!--指定键-->
+                    <value>map2</value><!--指定值-->
+                </entry>
+            </map>
+        </property>
+        <!--注入properties集合-->
+        <property name="props">
+            <props>
+                <prop key="1">prop1</prop>
+                <prop key="2">prop2</prop>
+            </props>
+        </property>
+        <!--注入空字符串-->
+        <property name="emptyValue">
+            <value></value>
+        </property>
+        <!--注入null-->
+        <property name="nullValue">
+            <null></null> <!--null不分配内存空间-->
+        </property>
+    </bean>
+
+</beans>
