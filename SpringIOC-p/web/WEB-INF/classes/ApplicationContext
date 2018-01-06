@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
+    <!--p属性值注入-->
+    <bean id="user" class="cn.spring.pojo.User" p:username="理想" p:age="18" p:email="233@.com" p:id="8">
+    </bean>
+    <!--利用构造器注入-->
+    <bean id="userDao" class="cn.spring.dao.impl.UserDaoImpl"></bean>
+    <bean id="userService" class="cn.spring.service.impl.UserServiceImpl" p:dao-ref="userDao">
+
+    </bean>
+</beans>
