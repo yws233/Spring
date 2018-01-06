@@ -1,0 +1,8 @@
+2018-1-6 11:28:40[ERROR](ErrorLogger.java:14) addNewUser方法发生异常java.lang.RuntimeException: 测试异常抛出增强！
+2018-1-6 13:09:37[ERROR](AroundLogger.java:29) addNewUser发生异常！java.lang.RuntimeException: 测试异常抛出增强！
+2018-1-6 13:09:37[ERROR](AroundLogger.java:32) addNewUser执行结束！
+2018-1-6 15:28:09[ERROR](AroundLogger.java:33) addNewUser发生异常！java.lang.RuntimeException: 测试异常抛出增强！
+2018-1-6 15:28:09[ERROR](AroundLogger.java:36) addNewUser执行结束！
+2018-1-6 15:28:28[ERROR](AroundLogger.java:36) addNewUser执行结束！
+2018-1-6 15:42:39[ERROR](AroundLogger.java:36) addNewUser执行结束！
+2018-1-6 15:42:47[ERROR](AroundLogger.java:36) addNewUser执行结束！
