@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
+    <bean id="userDao" class="cn.aop.dao.impl.UserDaoImpl"></bean>
+    <bean id="userService" class="cn.aop.service.impl.UserServiceImpl">
+        <property name="dao" ref="userDao"/>
+    </bean>
+    <!--打印日记类-->
+    <bean id="errorLogger" class="cn.aop.aop.ErrorLogger"/>
+    <aop:config>
+        <!--定义切入点-->
+        <aop:pointcut id="pointcut" expression="execution(public void addNewUser(..))"></aop:pointcut>
+        <!--定义切面,用Loggger引入增强的内容-->
+        <aop:aspect ref="errorLogger">
+           <aop:after-throwing method="error" pointcut-ref="pointcut" throwing="e"></aop:after-throwing>
+        </aop:aspect>
+    </aop:config>
+</beans>

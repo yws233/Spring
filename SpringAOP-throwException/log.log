@@ -1,0 +1,1 @@
+2018-1-6 11:28:40[ERROR](ErrorLogger.java:14) addNewUser方法发生异常java.lang.RuntimeException: 测试异常抛出增强！
